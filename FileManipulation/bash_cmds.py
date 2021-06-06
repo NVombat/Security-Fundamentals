@@ -21,5 +21,3 @@ list_files = subprocess.run(["ls", "-l"])
 print("The exit code was: %d" % list_files.returncode)
 #Run a command and terminate if error occurs
 subprocess.check_call(["ls", "-a", "-l"])
-
-#Print out the content of all files in the current directory

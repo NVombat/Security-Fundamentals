@@ -1,30 +1,20 @@
-#Import libraries
 from pathlib import Path
 import send2trash
 import zipfile
 import shutil
 import os
 
-#Path of file
 p = Path('test.txt')
-#Reads the text from the file and stores it in a variable
 file_content = p.read_text()
 print(file_content)
-#This overwrites the entire file
-# p.write_text('Hello, world!')
+#p.write_text('Hello, world!')
 
-#Opens file in read-write mode returning a file handle
 with open('test.txt', 'r+') as f:
-    #Reads the content into a variable
     content = f.read()
-    #Since after reading file pointer is at the end we shift the pointer back to the start
-    f.seek(0)
-    #Read file line by line and store in list
+    f.seek(0) #Since after reading file pointer is at the end we shift the pointer back to the start
     line_content = f.readlines()
-    #Display content
     print(content)
     print(line_content)
-    #Close file
     f.close()
 
 #Copy file from source to destination anbd rename copied file
@@ -62,19 +52,15 @@ zip_path = Path.home()/'Desktop/Security-Fundamentals/FileManipulation'
 print(zip_path)
 #Create a zip file object where the zip file is located
 eg_zip = zipfile.ZipFile(zip_path/'test.zip')
-#Get the list of items in the zip file
 print(eg_zip.namelist())
-#Get information on a particular file
 info = eg_zip.getinfo('runtime.txt')
 print(info)
-#Get the file sizes
 print(info.file_size)
 print(info.compress_size)
 #Extract specific file
 #eg_zip.extract('FILENAME')
 #Extract all contents of the zipfile
 #eg_zip.extractall()
-#Close ZipFile object
 eg_zip.close()
 
 #Creates a ZipFile object to create a new zipfile in write mode -> 'a' for append

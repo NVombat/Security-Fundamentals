@@ -1,4 +1,3 @@
-#Import libraries
 from pathlib import Path
 import subprocess
 import sys
@@ -16,7 +15,6 @@ print(Path.cwd())
 os.chdir("/home/nvombat/Desktop")
 #Prints current working directory
 print(Path.cwd())
-#Checks to see if we can run commands on that directory
 subprocess.run(["ls"])
 
 #Prints the path of the home directory of the user
@@ -36,7 +34,7 @@ print(os.path.abspath("file_ops.py"))
 #Returns the value of the relative path
 print(os.path.relpath("/Desktop", "file_ops.py"))
 
-#Prints the different parts of a path using the Path object
+#Prints the different parts of a path
 p = Path("/home/nvombat/Desktop/Security-Fundamentals/FileManipulation/script.sh")
 print("ANCHOR:", p.anchor)
 print("NAME:", p.name)
@@ -45,13 +43,12 @@ print("STEM:", p.stem)
 print("SUFFIX:", p.suffix)
 print("DRIVE:", p.drive)
 
-#Prints the different parent directories in a path using Path object
+#Prints the different parent directories in a path
 print(Path.cwd())
 print(Path.cwd().parents[0])
 print(Path.cwd().parents[1])
 print(Path.cwd().parents[2])
 
-#Prints the base name of the file and the directory using the os module
 print(os.path.dirname(p))
 print(os.path.basename(p))
 
@@ -62,7 +59,6 @@ print(os.path.split(p))
 path = "/home/nvombat/Desktop/Security-Fundamentals/FileManipulation/script.sh"
 print(path.split(os.sep))
 
-#Returns the size of a file or folder
 print(os.path.getsize("/home/nvombat/Desktop/Security-Fundamentals/FileManipulation/script.sh"))
 #Returns the contents of a folder in a list
 print(os.listdir("/home/nvombat/Desktop"))
@@ -74,7 +70,6 @@ print(os.path.getsize(os.path.join("/home/nvombat/Desktop/Security-Fundamentals/
 check_path_file = Path("/home/nvombat/Desktop/Security-Fundamentals/FileManipulation/script.sh")
 check_path_dir = Path("/home/nvombat/Desktop/Security-Fundamentals/FileManipulation/Test")
 
-#Checks if files and directories exists and whether they are files or directories
 print(check_path_file.exists())
 print(check_path_file.is_file())
 print(check_path_dir.is_dir())

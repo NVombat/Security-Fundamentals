@@ -1,5 +1,4 @@
 #Prints the contents of all the files in a directory
-#Import libraries
 from pathlib import Path
 import subprocess
 import glob
@@ -16,17 +15,13 @@ print("PATH:", output_path)
 files = glob.glob(output_path+"/*")
 #print(files)
 
-#If the list is not empty
 if len(files) != 0:
-    #For each file
     for file in files:
         #Access the file name
         file_name = Path(file).name
         print(file_name)
         try:
-            #Call 'cat' command on each file and thus read the contents of each file
             subprocess.check_call(["cat", file_name])
         #If file can't be read
         except:
-            #Error message
             print("Cant read " + file_name + "!")

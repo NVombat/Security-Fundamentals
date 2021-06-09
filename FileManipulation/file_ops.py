@@ -4,12 +4,15 @@ import zipfile
 import shutil
 import os
 
-p = Path('test.txt')
+p = os.path.abspath('test.txt')
+p = Path(p)
+print(p)
+
 file_content = p.read_text()
 print(file_content)
 #p.write_text('Hello, world!')
 
-with open('test.txt', 'r+') as f:
+with open(p, 'r+') as f:
     content = f.read()
     f.seek(0) #Since after reading file pointer is at the end we shift the pointer back to the start
     line_content = f.readlines()

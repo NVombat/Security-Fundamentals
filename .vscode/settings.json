@@ -1,6 +1,7 @@
 {
     "python.pythonPath": "/home/nvombat/anaconda3/bin/python",
     "files.associations": {
-        "stdlib.h": "c"
+        "stdlib.h": "c",
+        "stdio.h": "c"
     }
 }

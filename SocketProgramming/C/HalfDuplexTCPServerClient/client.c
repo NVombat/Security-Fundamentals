@@ -29,8 +29,8 @@ int main()
 
     while (1)
     {
-        printf("\nServer message: %s \n", serverResponse);
         recv(sockfd, &serverResponse, sizeof(serverResponse), 0);
+        printf("\nServer message: %s \n", serverResponse);
         
         printf("\nEnter message here: ");
         scanf("%s", clientResponse);

@@ -9,7 +9,7 @@
 
 int main()
 {
-    int sockfd, conn;
+    int sockfd;
     //Socket descriptor - Create a socket with a particular family, type and protocol 
     sockfd = socket(AF_INET, SOCK_STREAM, 0);
 

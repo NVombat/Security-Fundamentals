@@ -5,6 +5,7 @@
         "stdio.h": "c",
         "in.h": "c",
         "unistd.h": "c",
-        "types.h": "c"
+        "types.h": "c",
+        "string.h": "c"
     }
 }
